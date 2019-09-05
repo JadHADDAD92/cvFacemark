@@ -45,12 +45,9 @@ while cap.isOpened():
         landmarks = facemark.fit(frame, np.array([face]))
         for landmark in landmarks[1]:
             for landm in landmark[0]:
-                cv2.circle(frame,
-                           center=tuple(landm),
-                           radius=1,
-                           color=(255,25,255),
+                cv2.circle(frame, center=tuple(landm), radius=1, color=(255, 25, 255),
                            thickness=-1)
-        cv2.rectangle(frame, (startX, startY), (endX, endY), (126,65,64), 1)
+        cv2.rectangle(frame, (startX, startY), (endX, endY), (126, 65, 64), 1)
     cv2.imshow('frame', frame)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
